@@ -159,6 +159,12 @@ async function guardAndPopulate() {
   document.querySelectorAll('.app-avatar').forEach(el => { if (!el.querySelector('img')) el.textContent = initials; });
   document.querySelectorAll('[data-user-email]').forEach(el => el.textContent = user.email);
   document.querySelectorAll('[data-user-credits]').forEach(el => el.textContent = (profile?.credits ?? 0).toLocaleString());
+
+  // Credit bar fill — percentage of the plan's monthly cap
+  const planCaps = { free: 500, pro: 8000, max: 20000 };
+  const cap = planCaps[profile?.plan] || 500;
+  const pct = Math.max(0, Math.min(100, Math.round(((profile?.credits ?? 0) / cap) * 100)));
+  document.querySelectorAll('[data-credit-bar-fill]').forEach(el => el.style.width = pct + '%');
 }
 
 if (document.body.hasAttribute('data-require-auth')) {
