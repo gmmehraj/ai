@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Playground — Axiom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="aurora"><span></span><span></span><span></span><div class="particles" id="particles"></div></div>
+
+<div class="app-body">
+
+  <aside class="app-sidebar">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 2 L22 20 L2 20 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9 L16.5 17 L7.5 17 Z" fill="currentColor"/></svg></span>
+      Axiom
+    </a>
+    <nav class="app-nav">
+      <span class="app-nav-label">Studio</span>
+      <a href="dashboard.html" class="app-nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="3" width="8" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="11" width="8" height="10" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="8" height="7" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg>Dashboard</a>
+      <a href="playground.html" class="app-nav-link active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Playground</a>
+      <a href="#" class="app-nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 3h10l4 4v14H5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 11h8M8 15h8M8 7h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Projects</a>
+      <span class="app-nav-label">Account</span>
+      <a href="billing.html" class="app-nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 9h20" stroke="currentColor" stroke-width="1.6"/></svg>Billing<span class="badge">Pro</span></a>
+      <a href="settings.html" class="app-nav-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 00.34 1.87l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.7 1.7 0 00-1.87-.34 1.7 1.7 0 00-1.04 1.56V21a2 2 0 01-4 0v-.09A1.7 1.7 0 008.9 19.7a1.7 1.7 0 00-1.87.34l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.7 1.7 0 004.6 15a1.7 1.7 0 00-1.56-1.04H3a2 2 0 010-4h.09A1.7 1.7 0 004.6 9a1.7 1.7 0 00-.34-1.87l-.06-.06a2 2 0 112.83-2.83l.06.06A1.7 1.7 0 009 4.6a1.7 1.7 0 001.04-1.56V3a2 2 0 014 0v.09A1.7 1.7 0 0015.4 4.6a1.7 1.7 0 001.87-.34l.06-.06a2 2 0 112.83 2.83l-.06.06A1.7 1.7 0 0019.4 9a1.7 1.7 0 001.56 1.04H21a2 2 0 010 4h-.09A1.7 1.7 0 0019.4 15z" stroke="currentColor" stroke-width="1.4"/></svg>Settings</a>
+    </nav>
+    <div class="app-sidebar-foot">
+      <div class="app-avatar">RK</div>
+      <div class="app-user-meta">
+        <div class="app-user-name">Rehan K.</div>
+        <div class="app-user-plan">Studio Pro</div>
+      </div>
+      <a href="index.html" class="icon-btn" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </aside>
+
+  <div class="app-main">
+    <header class="app-topbar">
+      <button class="icon-btn app-menu-toggle" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <h1>Playground</h1>
+      <div class="app-topbar-spacer"></div>
+      <div class="credit-meter">
+        <span>6,240 credits</span>
+        <div class="credit-bar"><div class="credit-bar-fill" style="width:62%"></div></div>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <div class="app-content-inner">
+        <div class="pg-layout">
+
+          <!-- Tool switcher -->
+          <div class="pg-tools">
+            <button class="pg-tool-btn active" data-tool="chat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.5 8.5 0 01-8.9 8.49 8.63 8.63 0 01-3.9-.94L3 21l1.95-5.2a8.5 8.5 0 1116.05-4.3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Chat</button>
+            <button class="pg-tool-btn" data-tool="image"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="10" r="1.6" fill="currentColor"/><path d="M4 16l5-4 4 3 3-3 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Image</button>
+            <button class="pg-tool-btn" data-tool="video"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M17 10l5-3v10l-5-3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Video</button>
+            <button class="pg-tool-btn" data-tool="voice"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 2h6v11a3 3 0 01-6 0V2Z" stroke="currentColor" stroke-width="1.6"/><path d="M5 11a7 7 0 0014 0M12 18v4M9 22h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Voice</button>
+            <button class="pg-tool-btn" data-tool="code"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Code</button>
+          </div>
+
+          <!-- Panels -->
+          <div class="pg-panels">
+
+            <!-- CHAT -->
+            <section class="pg-panel active" data-tool="chat">
+              <div class="panel">
+                <div class="panel-head">
+                  <div><h2>Scribe</h2><p>Your drafting partner — learns your house style and keeps it.</p></div>
+                  <select class="select-native"><option>Scribe · Balanced</option><option>Scribe · Concise</option><option>Scribe · Expansive</option></select>
+                </div>
+                <div class="chat-window" id="chatWindow">
+                  <div class="chat-msg assistant">
+                    <div class="chat-avatar">AX</div>
+                    <div class="chat-bubble">Hey — tell me what you're writing and I'll match the tone you've used before. Briefs, docs, long-form, all fair game.</div>
+                  </div>
+                  <div class="chat-msg user">
+                    <div class="chat-avatar">You</div>
+                    <div class="chat-bubble">Draft a short product update announcing Relay automations.</div>
+                  </div>
+                  <div class="chat-msg assistant">
+                    <div class="chat-avatar">AX</div>
+                    <div class="chat-bubble">Here's a draft: "Relay now runs on a schedule or a trigger — connect any two tools in the studio and let the handoff happen without you." Want it punchier or more detailed?</div>
+                  </div>
+                </div>
+                <form id="chatForm" class="prompt-bar">
+                  <textarea id="chatInput" rows="1" placeholder="Message Scribe…"></textarea>
+                  <button type="submit" class="btn btn-solid" style="padding:0.6em 1.1em;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
+                </form>
+              </div>
+            </section>
+
+            <!-- IMAGE -->
+            <section class="pg-panel" data-tool="image">
+              <div class="panel">
+                <div class="panel-head">
+                  <div><h2>Vision</h2><p>Generate imagery from a brief, sketch, or reference board.</p></div>
+                </div>
+                <div class="gen-controls" style="margin-bottom:1rem;">
+                  <div class="field-inline">
+                    <label>Prompt</label>
+                    <textarea class="select-native" rows="2" style="resize:vertical;" placeholder="Editorial product shot, soft studio light, film grain…"></textarea>
+                  </div>
+                  <button class="btn btn-solid gen-generate-btn">Generate</button>
+                </div>
+                <div class="chip-row" style="margin-bottom:1.2rem;">
+                  <span class="chip active">Photorealistic</span>
+                  <span class="chip">Illustration</span>
+                  <span class="chip">3D render</span>
+                  <span class="chip">Film still</span>
+                </div>
+                <div class="gen-output-grid">
+                  <div class="gen-output" style="background:linear-gradient(155deg,#8B7CF6 0%,#3B2E82 55%,#120C24 100%);"></div>
+                  <div class="gen-output" style="background:linear-gradient(155deg,#F6C453 0%,#F2657A 55%,#2A0E18 100%);"></div>
+                  <div class="gen-output" style="background:linear-gradient(155deg,#4FD1C5 0%,#1F6E68 55%,#081615 100%);"></div>
+                  <div class="gen-output" style="background:linear-gradient(155deg,#49D5FF 0%,#8B7CF6 55%,#141024 100%);"></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- VIDEO -->
+            <section class="pg-panel" data-tool="video">
+              <div class="panel">
+                <div class="panel-head">
+                  <div><h2>Vision · Motion</h2><p>Turn a still, a script, or a prompt into a moving shot.</p></div>
+                </div>
+                <div class="gen-controls" style="margin-bottom:1rem;">
+                  <div class="field-inline">
+                    <label>Prompt</label>
+                    <textarea class="select-native" rows="2" style="resize:vertical;" placeholder="Slow dolly-in on a rain-lit street at night…"></textarea>
+                  </div>
+                  <button class="btn btn-solid gen-generate-btn">Generate</button>
+                </div>
+                <div class="chip-row" style="margin-bottom:1.2rem;">
+                  <span class="chip active">5s</span>
+                  <span class="chip">10s</span>
+                  <span class="chip">16:9</span>
+                  <span class="chip">9:16</span>
+                </div>
+                <div class="gen-output-grid">
+                  <div class="gen-output" style="aspect-ratio:16/9; background:linear-gradient(155deg,#49D5FF 0%,#8B7CF6 55%,#141024 100%);">
+                    <svg class="placeholder-icon" width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                  </div>
+                  <div class="gen-output" style="aspect-ratio:16/9; background:linear-gradient(155deg,#8B7CF6 0%,#3B2E82 55%,#120C24 100%);">
+                    <svg class="placeholder-icon" width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- VOICE -->
+            <section class="pg-panel" data-tool="voice">
+              <div class="panel">
+                <div class="panel-head">
+                  <div><h2>Voice</h2><p>Studio-grade speech synthesis in 40 languages.</p></div>
+                </div>
+                <div class="gen-controls" style="margin-bottom:1rem;">
+                  <div class="field-inline">
+                    <label>Script</label>
+                    <textarea class="select-native" rows="3" style="resize:vertical;" placeholder="Type or paste the line you want spoken…"></textarea>
+                  </div>
+                  <button class="btn btn-solid gen-generate-btn">Generate</button>
+                </div>
+                <div class="chip-row" style="margin-bottom:1.2rem;">
+                  <span class="chip active">Warm narrator</span>
+                  <span class="chip">Bright &amp; upbeat</span>
+                  <span class="chip">Calm &amp; low</span>
+                  <span class="chip">Cast a new voice</span>
+                </div>
+                <div class="panel" style="padding:1.1rem 1.3rem;">
+                  <div class="wave" style="height:46px;">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; margin-top:0.7rem; font-size:0.78rem; color:var(--text-faint); font-family:var(--font-mono);">
+                    <span>0:00</span><span>0:14</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- CODE -->
+            <section class="pg-panel" data-tool="code">
+              <div class="panel">
+                <div class="panel-head">
+                  <div><h2>Codex</h2><p>Reads your repo, ships patches with tests already written.</p></div>
+                  <select class="select-native"><option>Repo: axiom-web</option><option>Repo: axiom-api</option><option>Connect a repo…</option></select>
+                </div>
+                <div class="gen-controls" style="margin-bottom:1rem; grid-template-columns:1fr;">
+                  <div class="field-inline">
+                    <label>Task</label>
+                    <textarea class="select-native" rows="2" style="resize:vertical;" placeholder="Refactor the auth endpoint, keep the existing test suite green…"></textarea>
+                  </div>
+                  <button class="btn btn-solid gen-generate-btn" style="justify-self:start;">Run</button>
+                </div>
+                <div class="panel" style="background:#0d0d0d; font-family:var(--font-mono); font-size:0.82rem; color:var(--text-lo); line-height:1.7; overflow-x:auto;">
+<pre style="white-space:pre;"><span style="color:var(--a-teal)">// patches/auth-refactor.diff</span>
+<span style="color:var(--a-coral)">- if (user.token != null) {</span>
+<span style="color:var(--a-teal)">+ if (isValidToken(user.token)) {</span>
+    return next();
+<span style="color:var(--a-coral)">- }</span>
+<span style="color:var(--a-teal)">+ }
++ // added: tests/auth.spec.ts::validates expired tokens</span></pre>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
