@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body data-require-auth>
 
 <div class="grain"></div>
 <div class="aurora"><span></span><span></span><span></span><div class="particles" id="particles"></div></div>
@@ -37,7 +37,7 @@
         <div class="app-user-name">Rehan K.</div>
         <div class="app-user-plan">Studio Pro</div>
       </div>
-      <a href="index.html" class="icon-btn" title="Log out"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#" class="icon-btn" title="Log out" data-logout><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </aside>
 
@@ -217,6 +217,9 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="supabase-config.js"></script>
+<script src="auth.js"></script>
 <script src="script.js"></script>
 <script src="app.js"></script>
 </body>
