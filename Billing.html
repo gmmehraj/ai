@@ -55,8 +55,8 @@
         <div class="plan-card">
           <div>
             <span class="plan-card-name">Current plan</span>
-            <h2>Studio Pro</h2>
-            <p class="plan-card-price">$49/mo · renews Aug 4, 2026</p>
+            <h2 id="planCardName">Studio</h2>
+            <p class="plan-card-price" id="planCardPrice">Free forever</p>
           </div>
           <div style="display:flex; gap:0.7rem; flex-wrap:wrap;">
             <button class="btn btn-outline" data-mock-save="Redirecting to plan comparison">Change plan</button>
@@ -116,16 +116,16 @@
           <div class="price-grid" style="max-width:none;">
             <div class="price-card">
               <h3>Studio</h3>
-              <p class="price-tag">$0<span>/mo</span></p>
+              <p class="price-tag">₹0<span>/mo</span></p>
               <ul><li>3 projects</li><li>500 credits / month</li><li>All 8 tools, watermarked</li></ul>
-              <button class="btn btn-outline btn-full" data-mock-save="Switched to Studio">Downgrade</button>
+              <button class="btn btn-outline btn-full" data-mock-save="Contact support to downgrade">Downgrade</button>
             </div>
             <div class="price-card price-card-featured">
-              <span class="price-badge">Current plan</span>
+              <span class="price-badge" id="proBadge" style="display:none;">Current plan</span>
               <h3>Studio Pro</h3>
-              <p class="price-tag">$49<span>/mo</span></p>
+              <p class="price-tag">₹4,000<span>/mo</span></p>
               <ul><li>Unlimited projects</li><li>8,000 credits / month</li><li>Full-resolution exports</li><li>Relay automations</li></ul>
-              <button class="btn btn-solid btn-full" disabled style="opacity:.6; cursor:default;">Active</button>
+              <button class="btn btn-solid btn-full" id="proCheckoutBtn" data-checkout="pro">Upgrade to Pro</button>
             </div>
             <div class="price-card">
               <h3>Studio Max</h3>
@@ -141,10 +141,13 @@
   </div>
 </div>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="supabase-config.js"></script>
+<script src="razorpay-config.js"></script>
 <script src="auth.js"></script>
 <script src="script.js"></script>
 <script src="app.js"></script>
+<script src="billing-checkout.js"></script>
 </body>
 </html>

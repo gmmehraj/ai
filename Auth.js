@@ -165,6 +165,35 @@ async function guardAndPopulate() {
   const cap = planCaps[profile?.plan] || 500;
   const pct = Math.max(0, Math.min(100, Math.round(((profile?.credits ?? 0) / cap) * 100)));
   document.querySelectorAll('[data-credit-bar-fill]').forEach(el => el.style.width = pct + '%');
+
+  // Billing page: reflect the real plan on the summary card + Pro plan button
+  const planCardName = document.getElementById('planCardName');
+  const planCardPrice = document.getElementById('planCardPrice');
+  const proBadge = document.getElementById('proBadge');
+  const proCheckoutBtn = document.getElementById('proCheckoutBtn');
+
+  if (planCardName && planCardPrice) {
+    if (profile?.plan === 'pro') {
+      planCardName.textContent = 'Studio Pro';
+      planCardPrice.textContent = '₹4,000/mo';
+    } else if (profile?.plan === 'max') {
+      planCardName.textContent = 'Studio Max';
+      planCardPrice.textContent = 'Custom pricing';
+    } else {
+      planCardName.textContent = 'Studio';
+      planCardPrice.textContent = 'Free forever';
+    }
+  }
+  if (proBadge && proCheckoutBtn) {
+    if (profile?.plan === 'pro') {
+      proBadge.style.display = '';
+      proCheckoutBtn.textContent = 'Current plan';
+      proCheckoutBtn.disabled = true;
+      proCheckoutBtn.style.opacity = '.6';
+      proCheckoutBtn.style.cursor = 'default';
+      proCheckoutBtn.removeAttribute('data-checkout');
+    }
+  }
 }
 
 if (document.body.hasAttribute('data-require-auth')) {
